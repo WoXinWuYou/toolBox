@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>时间工具测试页面</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="./timeUtils.js"></script>
+<script>
+	var date1 = new Date();
+	$(document).ready(function() {
+		$("#show_div").html(date1.toJSON());
+		$("#add").click(function() {
+			date1 = addDate(date1, $("#dayNum").val())
+			$("#show_div").html(date1.toJSON());
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="add">日期加</button> <br/>
+	天数<input id="dayNum" type="number"/>
+	<div id="show_div"></div>
+</body>
+</html>
